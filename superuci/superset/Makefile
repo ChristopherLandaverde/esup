@@ -17,6 +17,97 @@
 
 # Python version installed; we need 3.10-3.11
 PYTHON=`command -v python3.11 || command -v python3.10`
+DOCKER_COMPOSE = docker-compose
+NON_DEV_FILE = docker-compose-non-dev.yml
+CONTAINER_NAME = superset_app
+SERVICE = my-service  # Replace with your service name if needed
+
+# Default target
+.PHONY: help
+help:
+	@echo "Available commands:"
+	@echo "  make up           - Start dev containers in detached mode"
+	@echo "  make up-non-dev   - Start non-dev containers in detached mode"
+	@echo "  make down         - Stop dev containers"
+	@echo "  make down-non-dev - Stop non-dev containers"
+	@echo "  make build        - Build dev containers"
+	@echo "  make build-non-dev - Build non-dev containers"
+	@echo "  make logs         - View logs for dev containers"
+	@echo "  make logs-non-dev - View logs for non-dev containers"
+	@echo "  make restart      - Restart dev containers"
+	@echo "  make restart-non-dev - Restart non-dev containers"
+	@echo "  make exec         - Execute shell in a dev container"
+	@echo "  make exec-non-dev - Execute shell in a non-dev container"
+	@echo "  make ps           - List running dev containers"
+	@echo "  make ps-non-dev   - List running non-dev containers"
+
+# Dev environment
+.PHONY: up
+up:
+	$(DOCKER_COMPOSE) up -d
+
+.PHONY: down
+down:
+	$(DOCKER_COMPOSE) down
+
+.PHONY: build
+build:
+	$(DOCKER_COMPOSE) build
+
+.PHONY: logs
+logs:
+	$(DOCKER_COMPOSE) logs -f
+
+.PHONY: restart
+restart:
+	$(DOCKER_COMPOSE) down && $(DOCKER_COMPOSE) up -d
+
+.PHONY: exec
+exec:
+	$(DOCKER_COMPOSE) exec $(SERVICE) sh
+
+.PHONY: ps
+ps:
+	$(DOCKER_COMPOSE) ps
+
+# Non-dev environment
+.PHONY: up-non-dev
+up-non-dev:
+	$(DOCKER_COMPOSE) -f $(NON_DEV_FILE) up -d
+
+.PHONY: down-non-dev
+down-non-dev:
+	$(DOCKER_COMPOSE) -f $(NON_DEV_FILE) down
+
+.PHONY: build-non-dev
+build-non-dev:
+	$(DOCKER_COMPOSE) -f $(NON_DEV_FILE) build
+
+.PHONY: logs-non-dev
+logs-non-dev:
+	$(DOCKER_COMPOSE) -f $(NON_DEV_FILE) logs -f
+
+.PHONY: restart-non-dev
+restart-non-dev:
+	$(DOCKER_COMPOSE) -f $(NON_DEV_FILE) down && $(DOCKER_COMPOSE) -f $(NON_DEV_FILE) up -d
+
+.PHONY: exec-non-dev
+exec-non-dev:
+	$(DOCKER_COMPOSE) -f $(NON_DEV_FILE) exec $(SERVICE) sh
+
+.PHONY: ps-non-dev
+ps-non-dev:
+	$(DOCKER_COMPOSE) -f $(NON_DEV_FILE) ps
+
+# Docker exec to access Superset container
+.PHONY: exec-superset
+exec-superset:
+	docker exec -it $(CONTAINER_NAME) bash
+
+
+
+
+
 
 .PHONY: install superset venv pre-commit
 
