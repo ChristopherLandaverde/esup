@@ -1,0 +1,42 @@
+# Ignore Python virtual environments
+venv/
+env/
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore logs and temporary files
+*.log
+*.pid
+*.pyc
+*.pyo
+*.~*
+*.swp
+
+# Ignore Docker files
+*.env
+.env
+.env.*
+docker-compose.override.yml
+
+
+# Ignore IDE and editor configuration files
+.idea/
+.vscode/
+*.code-workspace
+
+# Ignore build artifacts
+build/
+dist/
+__pycache__/
+
+# Ignore Git itself
+.git/
+
+# Ignore credentials and config
+config.yaml
+superset_config.py
+
+# Optional: Ignore anything specific to your custom setup
+# Uncomment and add custom exclusions if needed
+# custom_folder/
