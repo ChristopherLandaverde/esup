@@ -1,40 +1,41 @@
 # Sales and Customer Analysis
 ### Overview
-This project showcases my expertise in advanced data analysis and data visualization. I used SQL for data transformation and Apache Superset to create dashboards that uncover actionable insights into sales trends, customer behavior, and product performance. The insights are designed to guide strategic business decisions. This is a transactional data set which contains all the transactions occurring between 01/12/2010 and 09/12/2011 for a UK-based and registered non-store online retail.The company mainly sells unique all-occasion gifts. Many customers of the company are wholesalers.
+This project was designed to demonstrate my proficiency with PostgreSQL and to gain expertise with Docker. I used PostgreSQL to uncover insights and Apache Superset to create dashboards that provide actionable insights into sales trends, customer behavior, and product performance.
 
-# Tools and Skills Used
-### Tools
-SQL: For data extraction, transformation, and analysis.
-Apache Superset: For creating interactive dashboards.
-Docker: To deploy Apache Superset
+The dataset consisted of transactions from an e-commerce store based in the UK, specializing in unique, all-occasion gifts. Many of the store's customers are wholesalers.
+
+
+### Tools and Skills Used
+- **PostgreSQL**: Used to query and analyze data, uncovering key insights about sales and customer behavior.
+- **Apache Superset**: Helped create interactive dashboards to visualize trends and make the data easier to understand.
+- **Python**: Used for cleaning and preparing the data before diving into the analysis.
+
 ## Skills
-Data Analysis: Cohort analysis, retention trends, revenue tracking, and customer segmentation.
-Data Storytelling: Translating raw data into actionable insights.
-Visualization: Creating intuitive dashboards to convey findings effectively.
+- **Data Analysis**: Cohort analysis, retention trends, revenue tracking, and customer segmentation.
+- **Data Storytelling**: Turning raw data into actionable insights that drive decision-making.
+- **Visualization**: Building intuitive dashboards to effectively communicate findings.
+
 
 # Customer Selection 
 ![customer-selection-2024-12-24T02-38-23 445Z](https://github.com/user-attachments/assets/1dfb6174-c8f3-4eeb-8a03-8e3dffa03bb0)
 
 
 #### **Key Observations**
-1. **Customer Growth vs. Total Sales**:
-   - There is a consistent relationship between **unique customers** and **total items sold**.
-   - Months with high unique customer counts (e.g., **September** and **November**) see a corresponding increase in total sales volume.
+
    
-2. **Seasonal Spikes**:
+1. **Seasonal Spikes**:
    - The **November peak** suggests a **seasonal trend** (e.g., holiday shopping) that drives both customer engagement and total sales volume.
 
-3. **Stable Months**:
+2. **Stable Months**:
    - **May to July** exhibit steady but lower levels of sales and customer counts, indicating **periods of lower demand**.
 
-4. **Customer Retention**:
-   - Even when unique customer counts drop in certain months (e.g., **February** and **December**), total items sold remains high, suggesting **repeat purchases by loyal customers**.
+3. **Heavy Customer Retention**:
+   - Even when unique customer counts drop in certain months like **February** and **December**, total items sold remains high, suggesting **repeat purchases by loyal customers**.
 
 #### **Insights**
 - **Leverage Seasonal Trends**:
   - Plan marketing campaigns and promotions in advance of **November** to capitalize on seasonal spikes in customer engagement and sales volume.
-- **Focus on Loyalty Programs**:
-  - Strengthen customer loyalty initiatives to maintain high sales volumes during months with fewer unique customers.
+
 - **Stimulate Demand in Lower Periods**:
   - Use promotions or discounts during **May to July** to drive sales during traditionally lower-demand months.
 
@@ -82,7 +83,7 @@ ORDER BY monetary_value DESC;
 - Some products like **JUMBO BAG RED RETROSPOT** and **POP ART HOLDER** show a significant increase during this time.
 
 #### **Top Product Categories**
-- A specific product category (e.g., **StockCode 22457**) dominates in terms of both **revenue** and **sales volume**.
+- A specific product category  **StockCode 22457** dominates in terms of both **revenue** and **sales volume**.
 
 #### **Key Observations**
 1. **Top Sellers**:
