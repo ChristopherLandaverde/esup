@@ -40,6 +40,7 @@ help:
 	@echo "  make exec-non-dev - Execute shell in a non-dev container"
 	@echo "  make ps           - List running dev containers"
 	@echo "  make ps-non-dev   - List running non-dev containers"
+	@echo " make exec-superset - Docker exec to acccess super container "
 
 # Dev environment
 .PHONY: up

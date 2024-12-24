@@ -135,6 +135,8 @@ COPY --chown=superset:superset --from=superset-node /app/superset/static/assets 
 
 ## Lastly, let's install superset itself
 COPY --chown=superset:superset superset superset
+RUN ls -l /app/scripts/
+
 RUN --mount=type=cache,target=/root/.cache/pip \
     pip install --no-cache-dir -e .
 

@@ -245,7 +245,7 @@ services:
       - optional
     environment:
       DATABASE_HOST: localhost
-      DATABASE_DB: test
+      DATABASE_DB: tests
       REDIS_CELERY_DB: 2
       REDIS_RESULTS_DB: 3
       REDIS_HOST: localhost

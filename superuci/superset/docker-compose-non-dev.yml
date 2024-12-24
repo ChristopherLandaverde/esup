@@ -69,15 +69,14 @@ services:
     user: "root"
     restart: unless-stopped
     ports:
-      - 8088:8088
+      - 8089:8088
     depends_on: *superset-depends-on
     volumes: 
       - ./docker:/app/docker
+      - ./pythonpath_dev:/app/pythonpath_dev 
       - superset_home:/app/superset_home
-      - /home/user/superuci/online_retail.db:/app/online_retail.db
     environment:
-      - SQLALCHEMY_DATABASE_URI=sqlite:////app/online_retail.db
-
+      - SQLALCHEMY_DATABASE_URI=mysql+pymysql://newuser:password@localhost/e_data
   superset-init:
     container_name: superset_init
     build:
